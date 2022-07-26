@@ -28,14 +28,14 @@ db = MongoEngine()
 db.init_app(app) 
 app.secret_key = "caircocoders-ednalan-2020"
 # Route for seeing a data
-@app.route('/data')
-def get_time():    
-    # Returning an api for showing in  reactjs
-    return {
-        "Name":"geek", 
-        "Age":"22",
-        "programming":"python"
-        }
+# @app.route('/data')
+# def get_time():    
+#     # Returning an api for showing in  reactjs
+#     return {
+#         "Name":"geek", 
+#         "Age":"22",
+#         "programming":"python"
+#         }
   
 # @app.route("/add", methods=["POST"], strict_slashes=False)
 # def add_articles():
@@ -81,9 +81,9 @@ class User(db.Document):
     email = db.StringField()
     profile_pic = db.StringField()
 
-@app.route('/im')
-def index():
-    return render_template('upload.html')
+# @app.route('/im')
+# def index():
+#     return render_template('upload.html')
 
 
 # @app.route('/upload', methods=['POST'])
@@ -107,24 +107,24 @@ def index():
 
 
       
-# @app.route('/add', methods = ['POST'])
-# def get_query_from_react():
-#     # print(request.form['mail_subject'])
+@app.route('/add', methods = ['POST'])
+def get_query_from_react():
+    # print(request.form['mail_subject'])
 
-#     print(request.files)
+    # print(request.files)
     
-#     # filename = secure_filename(file.filename)
-#     # print(filename)
-#     # db1.something.insert_one(request.get_json())
+    # filename = secure_filename(file.filename)
+    # print(filename)
+    db1.something.insert_one(request.get_json())
 
 
-#     # file = (request.get_json())[mail_attach]
+    # file = (request.get_json())[mail_attach]
    
-#     return "ok"
+    return "ok"
 
 
 @app.route('/alag', methods = ['POST'])
-def get_query_from_react():
+def get_image():
     # print(request.form['mail_subject'])
     print(request.files)
     file = request.files['inputFile']

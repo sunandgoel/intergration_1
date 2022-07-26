@@ -33,8 +33,8 @@ function User() {
             body: JSON.stringify(data),
       // Adding headers to the request
       headers: {
-          "Content-type": "multipart/form-data"
-            // "Content-type": "application/json"
+          // "Content-type": "multipart/form-data"
+            "Content-type": "application/json"
       }
         })
         .then(response => response.json())
@@ -49,7 +49,7 @@ function User() {
     // const { ref: mail_subject, ...rest } = register("mail_subject");
     const { ref: mail_subject, ...mail_subjectrest } = register('mail_subject', { required: true });
     const { ref: mail_body, ...mail_bodyrest } = register('mail_body', { required: true });
-    const { ref: mail_attach, ...mail_attachrest } = register('mail_attach', { required: true });
+    // const { ref: mail_attach, ...mail_attachrest } = register('mail_attach', { required: true });
     
 
 
@@ -61,7 +61,7 @@ function User() {
           <Col md="12">
             <Card className="card-user">
               <CardHeader>
-                <CardTitle tag="h5">Mailing List</CardTitle>
+                <CardTitle tag="h5">Mail Body</CardTitle>
               </CardHeader>
               <CardBody>
               
@@ -95,12 +95,12 @@ function User() {
                       </FormGroup>
                     </Col>
                   </Row>
-                  <Row>
+                  {/* <Row>
                     <Col className="pr-1" md="6">
                       <FormGroup>
-                        <label >Attachment   </label> 
+                        <label >Attachment   </label>  */}
                         {/* <label htmlFor="attach"> <span height="100px" className="nc-icon nc-cloud-upload-94" /> </label> */}
-                        <Input
+                        {/* <Input
                           // hidden
                           type="file"
                           // onChange={(e) => setFile(e.target.files[0])}
@@ -108,9 +108,10 @@ function User() {
                           id="attach"      
                           {...mail_attachrest}
                           innerRef={mail_attach}              
-                        >
+                        > 
                         
-                        </Input> {/* 
+                        </Input>*/} 
+                        {/* 
                         <div className="left">
                          <img src={
                                 file
@@ -122,11 +123,11 @@ function User() {
                         {/* <Input type="file" name="inputFile" autocomplete="off"
                           onchange="loadFile(event)">
                         </Input> */}
-                      </FormGroup>
+                      {/* </FormGroup>
                     </Col>
                     
                   </Row>
-                  <img id="output" width="500"/>
+                  <img id="output" width="500"/> */}
 
                   <Row>
                     <div className="update ml-auto mr-auto">
@@ -135,7 +136,7 @@ function User() {
                         color="primary"
                         type="submit"
                       >
-                        Send Email
+                        Proceed to add attachment
                       </Button>
                     </div>
                   </Row>

@@ -156,17 +156,37 @@ import {
 
 function Formpage(){
   return(
-    <form method="post" action="/alag" enctype="multipart/form-data">
+    <div className="content">
+    <Row>
+    <Col md="12">
+      <Card className="card-user">
+        <CardHeader>
+          <CardTitle tag="h5">Mailing List</CardTitle>
+        </CardHeader>
+        <CardBody>
+        
+            <Row>
+              <Col className="pr-1" md="5">
+                
+                <form method="post" action="/alag" enctype="multipart/form-data">
     
-     <p>
-        <input type="file" name="inputFile" autocomplete="off" required ></input>
-        </p>
-          <p>
-    <input type="submit" value="Submit"></input>
-    </p>
-    </form>
+                    <p>
+                      <input type="file" name="inputFile" autocomplete="off" required ></input>
+                      </p>
+                        <p>
+                  <input type="submit" value="Submit"></input>
+                  </p>
+                  </form>
+              </Col>
+              
+            </Row>
+        </CardBody>
+      
+      </Card>
+      </Col>
+    </Row> 
+    </div>
   )
-
 }
 
 export default Formpage;
